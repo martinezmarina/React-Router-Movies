@@ -3,12 +3,13 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom'
 
 const Movie = (props) => {
+  
   const [movie, setMovie] = useState();
   const { movieID } = useParams();
  
   useEffect(() => {
-    const id = props.movies.find(it => {
-      return movieID === it.id
+    const id = props.movies.find(movie => {
+      return movieID === movie.id.toString()
     })
    
     // change ^^^ that line and grab the id from the URL
